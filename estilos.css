@@ -1,0 +1,30 @@
+body {
+    background-color: #e3f6ec;
+    text-align: center;
+    font-family: Georgia, "Times New Roman", serif;
+    color: #123b33;
+}
+
+p {
+    font-size: 18px;
+}
+
+.bus {
+    color: #15803d;
+}
+
+.metro {
+    color: #1d4ed8;
+}
+
+.taxi {
+    color: #a16207;
+}
+
+.intermunicipal {
+    color: #c2410c;
+}
+
+.otro {
+    color: #374151;
+}

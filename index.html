@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarifa Transporte</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<script>
+
+let Usuario = prompt("Digite su nombre")
+let Tipo, Especial
+let Medio, Precio, Clase
+let Beneficio, Rebaja, Ahorro, Pagar
+
+Tipo = parseInt(prompt("Elija el tipo de transporte:\n1 - Bus Urbano\n2 - Metro\n3 - Taxi\n4 - Intermunicipal"))
+
+Especial = parseInt(prompt("Elija la condicion especial:\n1 - Estudiante\n2 - Adulto mayor\n3 - Ninguna"))
+
+switch (Tipo) {
+    case 1:
+        Medio = "Bus Urbano"
+        Precio = 2500
+        Clase = "bus"
+        break
+    case 2:
+        Medio = "Metro"
+        Precio = 2800
+        Clase = "metro"
+        break
+    case 3:
+        Medio = "Taxi"
+        Precio = 5000
+        Clase = "taxi"
+        break
+    case 4:
+        Medio = "Intermunicipal"
+        Precio = 10000
+        Clase = "intermunicipal"
+        break
+    default:
+        Medio = "No valido"
+        Precio = 0
+        Clase = "otro"
+}
+
+Rebaja = 0
+Beneficio = "Ninguna"
+
+if (Especial == 1) {
+    Rebaja = 20
+    Beneficio = "Estudiante"
+}
+if (Especial == 2) {
+    Rebaja = 30
+    Beneficio = "Adulto mayor"
+}
+
+Ahorro = Precio * Rebaja / 100
+Pagar = Precio - Ahorro
+
+document.write ("<h1 class='" + Clase + "'>Calculadora de Transporte</h1>")
+document.write ("<p>Nombre del usuario : " + Usuario + "</p>")
+document.write ("<p class='" + Clase + "'>Tipo de transporte : " + Medio + "</p>")
+document.write ("<p>Condicion especial : " + Beneficio + "</p>")
+document.write ("<p>Descuento aplicado : " + Rebaja + "% ($" + Ahorro + ")</p>")
+document.write ("<h2 class='" + Clase + "'>Valor total por pagar : $" + Pagar + "</h2>")
+
+</script>
+
+</body>
+</html>
